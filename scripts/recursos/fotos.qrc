@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/img">
+    <file>eliminar.jpg</file>
+    <file>fondo.jpg</file>
+    <file>menu.jpeg</file>
+  </qresource>
+</RCC>

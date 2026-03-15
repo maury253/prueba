@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#centralwidget {
+border-image: url(:/img/menu.jpeg);
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QMdiArea" name="mdiArea">
+      <property name="styleSheet">
+       <string notr="true">QMdiArea {
+    background-image: url(:/img/menu.jpeg);
+	background-position: center;
+	background-repeat: no-repeat;
+}</string>
+      </property>
+      <property name="viewMode">
+       <enum>QMdiArea::TabbedView</enum>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivos">
+    <property name="title">
+     <string>Archivos</string>
+    </property>
+    <addaction name="botonCrearArchivo"/>
+    <addaction name="separator"/>
+    <addaction name="botonMostrarArchivo"/>
+    <addaction name="separator"/>
+    <addaction name="botonEliminarArchivo"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuAlumnos">
+    <property name="title">
+     <string>Alumnos</string>
+    </property>
+    <addaction name="botonCrearAlumno"/>
+    <addaction name="separator"/>
+    <addaction name="botonMostrarAlumno"/>
+    <addaction name="separator"/>
+    <addaction name="botonEliminarAlumno"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuLibros">
+    <property name="title">
+     <string>Libros</string>
+    </property>
+    <addaction name="actioncrear_2"/>
+    <addaction name="separator"/>
+    <addaction name="actionmostrar_3"/>
+    <addaction name="separator"/>
+    <addaction name="actioneliminar_3"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuPrestamo">
+    <property name="title">
+     <string>Prestamo</string>
+    </property>
+    <addaction name="actionnuevo_prestamo"/>
+    <addaction name="separator"/>
+    <addaction name="actionmostrar_prestamo"/>
+    <addaction name="separator"/>
+    <addaction name="actioneliminar_prestamo"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuArchivos"/>
+   <addaction name="menuAlumnos"/>
+   <addaction name="menuLibros"/>
+   <addaction name="menuPrestamo"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="botonCrearAlumno">
+   <property name="text">
+    <string>crear</string>
+   </property>
+  </action>
+  <action name="botonMostrarAlumno">
+   <property name="text">
+    <string>mostrar</string>
+   </property>
+  </action>
+  <action name="actioneliminar">
+   <property name="text">
+    <string>eliminar</string>
+   </property>
+  </action>
+  <action name="actioncrear_2">
+   <property name="text">
+    <string>crear</string>
+   </property>
+  </action>
+  <action name="botonCrearArchivo">
+   <property name="text">
+    <string>crear</string>
+   </property>
+  </action>
+  <action name="botonMostrarArchivo">
+   <property name="text">
+    <string>mostrar</string>
+   </property>
+  </action>
+  <action name="botonEliminarArchivo">
+   <property name="text">
+    <string>eliminar</string>
+   </property>
+  </action>
+  <action name="actionmostrar_3">
+   <property name="text">
+    <string>mostrar</string>
+   </property>
+  </action>
+  <action name="actioneliminar_3">
+   <property name="text">
+    <string>eliminar</string>
+   </property>
+  </action>
+  <action name="actionnuevo_prestamo">
+   <property name="text">
+    <string>nuevo prestamo</string>
+   </property>
+  </action>
+  <action name="actionmostrar_prestamo">
+   <property name="text">
+    <string>mostrar prestamo</string>
+   </property>
+  </action>
+  <action name="actioneliminar_prestamo">
+   <property name="text">
+    <string>eliminar prestamo</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../scripts/recursos/fotos.qrc"/>
+ </resources>
+ <connections/>
+</ui>
