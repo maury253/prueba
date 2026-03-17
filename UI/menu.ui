@@ -80,8 +80,8 @@ border-image: url(:/img/menu.jpeg);
     <addaction name="separator"/>
     <addaction name="botonMostrarAlumno"/>
     <addaction name="separator"/>
-    <addaction name="botonEliminarAlumno"/>
     <addaction name="separator"/>
+    <addaction name="botonEliminarAlumno"/>
    </widget>
    <widget class="QMenu" name="menuLibros">
     <property name="title">
@@ -169,6 +169,11 @@ border-image: url(:/img/menu.jpeg);
   <action name="actioneliminar_prestamo">
    <property name="text">
     <string>eliminar prestamo</string>
+   </property>
+  </action>
+  <action name="botonEliminarAlumno">
+   <property name="text">
+    <string>eliminar</string>
    </property>
   </action>
  </widget>

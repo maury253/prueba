@@ -37,20 +37,34 @@ class mostrarAlumno(QDialog):
                 self.tablaDatos.setItem(renglon_indice, columna_indice, item)
   
 
-    def obtenerDatos(self, item):
-        row = self.tablaDatos.currentRow()
+    # def obtenerDatos(self, item):
+    #     row = self.tablaDatos.currentRow()
                 
-        id = self.tablaDatos.item(row, 0).text()
+    #     id = self.tablaDatos.item(row, 0).text()
 
        
+    #     if not self.parent.ventana_editar_alumno:
+    #         gui = editarAlumno(id, self)
+    #         self.ventana_editar_alumno = self.parent.mdiArea.addSubWindow(gui)
+    #         self.ventana_editar_alumno.setWindowFlags(Qt.WindowType.FramelessWindowHint)
+    #         gui.showMaximized()
+    #     else:
+    #         for win in self.parent.mdiArea.subWindowList():
+    #             if win == self.ventana_editar_alumno:
+    #                 self.parent.mdiArea.setActiveSubWindow(win)
+    def obtenerDatos(self, item):
+        row = self.tablaDatos.currentRow()
+        id = self.tablaDatos.item(row, 0).text()
+
+            # Usar self.parent de manera consistente para evitar múltiples ventanas
         if not self.parent.ventana_editar_alumno:
-            gui = editarAlumno(id, self)
-            self.ventana_editar_alumno = self.parent.mdiArea.addSubWindow(gui)
-            self.ventana_editar_alumno.setWindowFlags(Qt.WindowType.FramelessWindowHint)
+            gui = editarAlumno(id, self) # Pasamos 'self' para que editarAlumno nos reconozca como parent
+            self.parent.ventana_editar_alumno = self.parent.mdiArea.addSubWindow(gui)
+            self.parent.ventana_editar_alumno.setWindowFlags(Qt.WindowType.FramelessWindowHint)
             gui.showMaximized()
         else:
             for win in self.parent.mdiArea.subWindowList():
-                if win == self.ventana_editar_alumno:
+                if win == self.parent.ventana_editar_alumno:
                     self.parent.mdiArea.setActiveSubWindow(win)
 
 

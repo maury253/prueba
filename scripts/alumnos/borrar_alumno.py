@@ -9,7 +9,7 @@ from scripts.alumnos.editar_alumno import editarAlumno
 class mostrarAlumnoEliminar(QDialog):
     def __init__(self, parent = None):
         super(mostrarAlumnoEliminar,self).__init__()
-        uic.loadUi("mostrarAlumno.ui", self)
+        uic.loadUi(misc.rutaMostrarAlumno, self)
 
         #es la linea que nos permite
         self.tablaDatos.itemDoubleClicked.connect(self.obtenerDatos)
@@ -50,7 +50,7 @@ if __name__ == "__main__":
 class eliminarAlumno(QDialog):
     def __init__(self, id, parent=None):
         super().__init__()
-        uic.loadUi("confirmarEliminacion.ui", self)
+        uic.loadUi(misc.rutaConfirmarEliminacionAlumno, self)
 
         self.id = id
         self.botonConfirmar.clicked.connect(self.eliminar)

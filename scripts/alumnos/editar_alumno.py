@@ -8,6 +8,7 @@ class editarAlumno(QDialog):
     def __init__(self, id , parent = None):
         super(editarAlumno,self).__init__()
         uic.loadUi(misc.rutaEditarAlumno,self)
+        self.parent = parent
 
         self.id = id
         self.Boton_Registro.clicked.connect(self.guardarCambios)
@@ -42,14 +43,9 @@ class editarAlumno(QDialog):
         semestre = self.Semestre.text()
 
         apellidoMaternoSi = True
-        if not apellidoMaterno:
-            apellidoMaternoSi = False
-        
-        if not nombre or not apellidoPaterno or not edad or not carrera or not genero or not semestre:
-            QMessageBox.warning(self, "App", "Por favor ingrese todos los datos")
-            return
         if not apellidoMaternoSi:
             apellidoMaterno = " "
+            
         df = pd.read_csv(misc.ruta)
         df.loc[df["Id"]== int(self.id), "Nombre"] = nombre
         df.loc[df["Id"]== int(self.id), "Apellido paterno"] = apellidoPaterno
@@ -59,14 +55,18 @@ class editarAlumno(QDialog):
         df.loc[df["Id"]== int(self.id), "Carrera"] = carrera
         df.loc[df["Id"]== int(self.id), "Semestre"] = semestre
 
-
-        df.to_csv("datos.csv", index=False)
+        
+        df.to_csv(misc.ruta, index=False)
 
         
-    
-    def closeEvent(self, event):
-        self.parent.ventana_editar_alumno = ""
-        event.accept()
+        if self.parent:
+            self.parent.mostrarInformacion()
+        self.parentWidget().close()
+
+    def closeEvent(self, event): 
+        if self.parent:
+            self.parent.parent.ventana_editar_alumno = ""
+        
 
 
 
